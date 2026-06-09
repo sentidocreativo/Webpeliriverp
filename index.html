@@ -7,49 +7,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <div id="progress-bar" class="progress-bar"></div>
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="brand-logo">Peli Rivero</a>
+            <a href="índice.html" class="brand-logo">Peli Rivero</a>
             <a href="https://wa.me/5491164274114" target="_blank" rel="noopener" class="nav-instagram">@pelirivero_</a>
         </div>
     </header>
     <main>
-        <section class="hero scroll-reveal">
+        <section class="hero">
             <div class="hero-content">
                 <span class="hero-tagline">Peli Rivero</span>
                 <h1>Recursos para emprendedores que quieren vender más</h1>
-                <p class="hero-subtitle">Si tenés un negocio y no sabés qué publicar, estás en el lugar correcto.</p>
+                <p class="hero-subtitle">Si tenés un negocio y no sabés qué publicar, estás en el lugar correcto. Olvidate de las plantillas corporativas aburridas.</p>
                 <div class="cta-group">
                     <a href="#recursos" class="btn btn-primary">Empezar ahora</a>
                     <a href="https://wa.me/5491164274114" target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp</a>
                 </div>
             </div>
-            <div class="hero-image-wrapper"><div class="image-placeholder">foto 1</div></div>
+            <div class="hero-image-wrapper"><div class="image-placeholder">[Tu Foto Estética Acá]</div></div>
         </section>
-        <section class="pain-points section-padding scroll-reveal">
+
+        <section class="rubros-section">
             <div class="container">
-                <h2 class="section-title text-center">¿Te pasa esto?</h2>
-                <div class="grid-cards">
-                    <div class="card-pain"><p>Publicás y nadie comenta</p></div>
-                    <div class="card-pain"><p>No sabés qué grabar</p></div>
-                    <div class="card-pain"><p>Te quedás sin ideas</p></div>
+                <h2 class="section-title text-center" style="margin-bottom: 10px;">¿Qué negocio tenés?</h2>
+                <p class="text-center" style="color: var(--gray-editorial); font-size: 1.1rem; font-weight: 300; margin-bottom: 20px;">Tocá tu rubro para ver tu estrategia personalizada:</p>
+                
+                <div class="rubros-container">
+                    <button class="rubro-btn" onclick="mostrarRubro('carpintero')">Carpintería</button>
+                    <button class="rubro-btn" onclick="mostrarRubro('barbero')">Barbería</button>
+                    <button class="rubro-btn" onclick="mostrarRubro('indumentaria')">Marcas de Ropa</button>
                 </div>
-                <div class="pain-footer-text text-center">
-                    <p class="editorial-quote">"Tener un buen negocio no siempre alcanza. <br><strong>También hay que aprender a mostrarlo.</strong>"</p>
+
+                <div id="box-carpintero" class="rubro-content-box">
+                    <h4>Estrategia para Carpinteros 🪵</h4>
+                    <p>Tu fuerte es el proceso físico y el ASMR. Mostrá el lijado en primer plano, el sonido de las máquinas cortando madera y el impactante cambio de "la madera virgen" al mueble lustrado en un departamento lujoso.</p>
+                </div>
+                <div id="box-barbero" class="rubro-content-box">
+                    <h4>Estrategia para Barberos 💈</h4>
+                    <p>Tu negocio vende transformación extrema y estilo. Hacé videos de transiciones rápidas antes/después del corte. Enfocate en los detalles: el vaporizador facial, el perfilado de la navaja y la reacción del cliente al verse en el espejo.</p>
+                </div>
+                <div id="box-indumentaria" class="rubro-content-box">
+                    <h4>Estrategia para Marcas de Ropa 👗</h4>
+                    <p>No muestres solo la ropa colgada. Mostrá cómo armar 3 outfits diferentes con la misma prenda básica, el proceso real de cómo empaquetás los pedidos perfumados y desafíos de estilo reales para tus seguidoras.</p>
                 </div>
             </div>
         </section>
-        <section class="resources section-padding scroll-reveal" id="recursos">
+
+        <section class="pain-points">
             <div class="container">
-                <h2 class="section-title text-center">Empezá por acá</h2>
+                <h2 class="section-title text-center">¿Te pasa esto?</h2>
+                <div class="grid-cards">
+                    <div class="card-pain"><p>Publicás contenido todos los días y nadie te comenta ni te compra.</p></div>
+                    <div class="card-pain"><p>Te ponés frente a la cámara y te quedás en blanco sin saber qué grabar.</p></div>
+                    <div class="card-pain"><p>Sentís que tu negocio es excelente pero tus redes se ven invisibles.</p></div>
+                </div>
+                <div class="pain-footer-text text-center">
+                    <p class="editorial-quote">"Tener un gran negocio ya no alcanza. <br><strong>También hay que aprender a mostrarlo.</strong>"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources" id="recursos">
+            <div class="container">
+                <h2 class="section-title text-center">Material de trabajo</h2>
                 <div class="grid-three">
                     <div class="card-resource">
                         <h3>Ganchos que frenan el scroll</h3>
-                        <a href="hooks.html" class="link-editorial">Acceder al recurso →</a>
+                        <a href="ganchos.html" class="link-editorial">Acceder al recurso →</a>
                     </div>
                     <div class="card-resource">
                         <h3>50 ideas de contenido</h3>
@@ -64,8 +92,18 @@
         </section>
     </main>
     <footer class="footer-legal">
-        <p>&copy; 2026 Peli Rivero.</p>
+        <p>&copy; 2026 Peli Rivero. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function mostrarRubro(rubro) {
+            document.querySelectorAll('.rubro-content-box').forEach(box => box.classList.remove('active'));
+            document.querySelectorAll('.rubro-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById('box-' + rubro).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

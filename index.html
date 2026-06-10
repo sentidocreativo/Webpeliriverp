@@ -6,11 +6,10 @@
     <title>Peli Rivero | Recursos para Emprendedores</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght=0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div id="progress-bar" class="progress-bar"></div>
     <header class="main-header">
         <div class="header-container">
             <a href="índice.html" class="brand-logo">Peli Rivero</a>
@@ -28,7 +27,9 @@
                     <a href="https://wa.me/5491164274114" target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp</a>
                 </div>
             </div>
-            <div class="hero-image-wrapper"><div class="image-placeholder">[Tu Foto Estética Acá]</div></div>
+            <div class="hero-image-wrapper">
+                <div class="image-placeholder">[Tu Foto Estética Acá]</div>
+            </div>
         </section>
 
         <section class="rubros-section">
@@ -37,9 +38,9 @@
                 <p class="text-center" style="color: var(--gray-editorial); font-size: 1.1rem; font-weight: 300; margin-bottom: 20px;">Tocá tu rubro para ver tu estrategia personalizada:</p>
                 
                 <div class="rubros-container">
-                    <button class="rubro-btn" onclick="mostrarRubro('carpintero')">Carpintería</button>
-                    <button class="rubro-btn" onclick="mostrarRubro('barbero')">Barbería</button>
-                    <button class="rubro-btn" onclick="mostrarRubro('indumentaria')">Marcas de Ropa</button>
+                    <button class="rubro-btn" data-rubro="carpintero">Carpintería</button>
+                    <button class="rubro-btn" data-rubro="barbero">Barbería</button>
+                    <button class="rubro-btn" data-rubro="indumentaria">Marcas de Ropa</button>
                 </div>
 
                 <div id="box-carpintero" class="rubro-content-box">
@@ -95,15 +96,7 @@
         <p>&copy; 2026 Peli Rivero. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        function mostrarRubro(rubro) {
-            document.querySelectorAll('.rubro-content-box').forEach(box => box.classList.remove('active'));
-            document.querySelectorAll('.rubro-btn').forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById('box-' + rubro).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
+

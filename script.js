@@ -1,12 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) {
-        window.addEventListener('scroll', () => {
-            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            if (height > 0) {
-                progressBar.style.width = ((winScroll / height) * 100) + '%';
+    const botones = document.querySelectorAll('.rubro-btn');
+    const cajas = document.querySelectorAll('.rubro-content-box');
+
+    botones.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const rubroSeleccionado = btn.getAttribute('data-rubro');
+
+            // Quitar activo de todos los botones y cajas
+            botones.forEach(b => b.classList.remove('active'));
+            cajas.forEach(c => {
+                c.classList.remove('active');
+                c.style.display = 'none';
+            });
+
+            // Activar el botón tocado
+            btn.classList.add('active');
+
+            // Mostrar y activar la caja correspondiente
+            const cajaActiva = document.getElementById(`box-${rubroSeleccionado}`);
+            if (cajaActiva) {
+                cajaActiva.style.display = 'block';
+                setTimeout(() => {
+                    cajaActiva.classList.add('active');
+                }, 10);
             }
         });
-    }
+    });
 });
